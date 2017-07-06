@@ -1,0 +1,311 @@
+@import 'reset';
+@import 'fonts';
+@import 'colors';
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+$input-border: 1px solid #D8D8D8;
+$bubble-color: #FCD321;
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  background: url("../img/map.png"), linear-gradient(to bottom left, $main-top-background-color, $main-bottom-background-color), url("../img/mountain.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: 30px;
+  width: auto;
+}
+
+h1 {
+  color: $dark-grey;
+}
+
+button {
+  outline: none;
+}
+
+label {
+  color: $label-color;
+}
+
+input {
+  font-size: 18px;
+  margin-top: 8px;
+  color: $medium-gray;
+}
+
+.capitalize {
+  text-transform: uppercase;
+}
+
+.form-container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px 45px 35px 45px;
+  @include border-radius (5px);
+  margin: 10% auto 0 auto;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* input fields, labels and button */
+
+.email-container {
+  margin-top: 28px;
+}
+
+.email {
+  width: 100%;
+  height: 50px;
+  border: $input-border;
+  padding: 0 20px;
+}
+
+.password-container {
+  position: relative;
+  margin-top: 28px;
+}
+
+.password {
+  width: 100%;
+  height: 50px;
+  border: $input-border;
+  padding-left: 20px;
+  padding-right: 80px;
+}
+
+.show {
+  position: absolute;
+  right: 10px;
+  top: 38px;
+  width: 60px;
+  height: 30px;
+  font-weight: bold;
+  background: $show-background-color;
+  color: $show-font-color;
+  @include border-radius (2px);
+}
+
+.login-actions-container {
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forget {
+  color: $link-color;
+}
+
+.remember {
+  color: $medium-gray;
+}
+
+
+/* horizontal line */
+
+.horizontal-line {
+  display: inline-block;
+  text-align: center;
+  color: $light-grey;
+  font-size: 14px;
+  width: 100%;
+  border-bottom: $input-border;
+  line-height: 0.1em;
+  margin: 20px 0 20px;
+}
+
+.horizontal-line span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+
+/* social buttons */
+
+.social-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-btn {
+  position: relative;
+  height: 36px;
+  width: 170px;
+  display: inline-block;
+  @include border-radius (5px);
+  color: #fff;
+  font-size: 14px;
+  line-height: 36px;
+  text-align: center;
+  &.fb {
+    background: $fb-button-background-color;
+    margin-right: 10px;
+  }
+  &.tw {
+    background: $tw-button-background-color;
+  }
+  .icon {
+    position: absolute;
+    left: 7%;
+    opacity: 0.5;
+    line-height: 36px;
+    font-size: 30px;
+  }
+}
+
+
+/* sign-in button */
+
+.action-button {
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+  max-height: 55px;
+  margin-top: 30px;
+  display: block;
+  @include border-radius (4px);
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 55px;
+  &.animate {
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+  }
+  &.blue {
+    background-color: $sign-in-button-background-color;
+    border-bottom: 3px solid $sign-in-button-border-color;
+    text-shadow: 0px -2px $sign-in-button-border-color;
+  }
+}
+
+.action-button:active {
+  transform: translate(0px, 5px);
+  border-bottom: 1px solid;
+}
+
+
+/* checkbox restyling */
+
+.custom_checkbox {
+  display: none;
+}
+
+.custom_checkbox + label {
+  cursor: pointer;
+}
+
+.custom_checkbox + label:before {
+  background: #fff;
+  height: 21px;
+  width: 21px;
+  border: $input-border;
+  @include border-radius (5px);
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+  top: -1px;
+}
+
+.custom_checkbox:checked + label:before {
+  content: "\2713";
+  color: #fff;
+  background: $checkbox-checked-backround-color;
+  font-size: 14px;
+  text-align: center;
+  line-height: 21px;
+}
+
+
+/* speech bubble */
+
+.talk-bubble {
+  display: inline-block;
+  position: absolute;
+  right: -160px;
+  top: 0;
+  max-width: 150px;
+  max-height: 80px;
+  width: 100%;
+  background-color: $bubble-color;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  &.round {
+    @include border-radius(15px);
+  }
+  &.tri-right.btm-left:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    right: auto;
+    top: auto;
+    bottom: -20px;
+    border: 22px solid;
+    border-color: transparent transparent transparent $bubble-color;
+  }
+}
+
+.talktext {
+  padding: 1em;
+  text-align: center;
+  line-height: 1.5em;
+  p {
+    font-size: 40px;
+    color: #fff;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-container {
+    flex-direction: column;
+    align-items: center;
+    & .social-btn {
+      width: 100%;
+    }
+    & .fb {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .form-container {
+    margin: 35% auto 0 auto;
+  }
+  .talk-bubble {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: -102px auto;
+    &.tri-right.btm-left:after {
+      left: 50px;
+      bottom: -44px;
+      border-color: $bubble-color transparent transparent transparent;
+    }
+  }
+}

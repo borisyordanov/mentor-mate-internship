@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Infinite-Scroll</title>
+	<link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+	<main class="main-container">
+		<header class="header capitalize">
+			<h1>Top 5 Github Repositories stats</h1>
+			<a id="link" class="link" href="" target="_blank">Current request link</a>
+		</header>
+		<section id="repo-container" class="repo-container"></section>
+		<section class="controls">
+			<button id="pull-requests" class="btn capitalize">Pull requests</button>
+			<button id="open-issues" class="btn capitalize">Open issues</button>
+			<button id="closed-issues" class="btn capitalize">Closed issues</button>
+			<button id="age" class="btn capitalize">Age <span class="icon-arrow down"></span></button>
+			<button id="comments" class="btn capitalize">Comments <span class="icon-arrow down"></span></button>
+			<button id="update" class="btn capitalize">Update date <span class="icon-arrow down"></span></button>
+		</section>
+		<section id="issue-container" class="issue-container">
+		</section>
+	</main>
+	<script src="js/App.js"></script>
+	<script src="js/Render.js"></script>
+	<script src="js/Request.js"></script>
+	<script src="js/Filter.js"></script>
+	<script src="js/index.js"></script>
+</body>

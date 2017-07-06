@@ -1,0 +1,185 @@
+@import 'reset';
+@import 'palette';
+@import 'icons';
+
+/* Scroll bar */
+
+::-webkit-scrollbar {
+	width: 5px;
+	/* for vertical scrollbars */
+	height: 5px;
+	/* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+	background: $scrollBar;
+}
+
+::-webkit-scrollbar-track {
+	background: lighten($scrollBar, 25%);
+}
+
+
+/* GENERAL */
+
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	background: $background;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.header {
+	margin: 10px;
+	text-align: center;
+	& .link {
+		display: block;
+		margin-top: 10px;
+	}
+}
+
+.btn {
+	display: inline-block;
+	margin: 0 5px 5px 0;
+	padding: 5px 15px;
+	font-size: 18px;
+	line-height: 1.8;
+	appearance: none;
+	box-shadow: none;
+	border-radius: 0;
+	color: #6496c8;
+	background: transparent;
+	border: solid 3px #6496C7;
+	text-transform: capitalize;
+}
+
+.btn:hover,
+.btn:active,
+.btn.active {
+	border-color: #27496d;
+	color: #27496d;
+	background: lighten(#27496d, 40%);
+	& .arrow {
+		color: #27496d;
+	}
+}
+
+.main-container {
+	height: 100vh;
+	overflow-y: scroll;
+	margin: 0 auto;
+}
+
+.issue-container {
+	max-width: 65%;
+	margin: 0 auto;
+	text-align: center;
+	.issue {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-content: space-around;
+		flex-wrap: wrap;
+		text-align: center;
+		color: white;
+		margin: 3px;
+		padding: 5px 5px 10px 5px;
+		border-radius: 5px;
+		.title {
+			flex: 0 1 100%;
+			font-size: 24px;
+			margin: 10px 0;
+		}
+		.number,
+		.date,
+		.author,
+		.state,
+		.comments {
+			display: inline-block;
+			font-size: 15px;
+			padding: 0 2px;
+		}
+		.state {
+			flex: 0 1 100%;
+			margin: 10px 0;
+			text-transform: uppercase;
+			font-weight: bold;
+			&.closed {
+				color: red;
+			}
+			&.open {
+				color: #6496c8;
+			}
+		}
+		.author > a {
+			color: #27496d;
+			text-decoration: underline;
+		}
+	}
+	.issue:nth-of-type(even) {
+		background: $issueColor1;
+	}
+	.issue:nth-of-type(odd) {
+		background: $issueColor2;
+	}
+	.issue > * {
+		max-width: 100%;
+		word-wrap: break-word;
+	}
+}
+
+.controls {
+	margin: 20px auto;
+	text-align: center;
+}
+
+.icon-arrow {
+	display: inline-block;
+	&.down {
+		transform: rotate(180deg);
+	}
+	&.up {
+		transform: rotate(0deg);
+	}
+}
+
+.link {
+	width: 90%;
+	text-align: center;
+	word-break: break-all;
+	margin: 0 auto;
+}
+
+.repo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+	& .repo {
+		display: inline-block;
+		margin: 0 20px;
+		padding: 10px;
+		border-radius: 5px;
+		text-align: center;
+		& .title {
+			font-size: 18px;
+			padding-bottom: 5px;
+		}
+	}
+	& .repo.active {
+		background: #a2c7b5;
+	}
+	& .repo span {
+		padding-right: 5px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.issue-container {
+		max-width: 90%;
+	}
+}

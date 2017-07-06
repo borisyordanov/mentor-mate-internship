@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three Cup Monte</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="main-container">
+    <section class="controls-container">
+      <div class="container initial">
+        <div class="input-container">
+          <label>Name:</label>
+          <input id="name" class="input" type="text">
+        </div>
+        <div class="input-container">
+          <label>Wallet:</label>
+          <input id="wallet" class="input" type="number" step="10">
+        </div>
+        <button id="init" class="btn">Start</button>
+      </div>
+      <div class="container bets hide">
+        <div class="input-container">
+          <label>Bet:</label>
+          <input id="bet" class="input" type="number" step="10">
+        </div>
+        <button id="start" value="1" class="btn easy">Easy</button>
+        <button id="start" value="1.5" class="btn hard">Hard</button>
+        <button id="start" value="2" class="btn impossible">Impossibru</button>
+      </div>
+      <div class="container ball-placer hide">
+        <h1>Choose where to place the ball</h1>
+        <p>Left
+          <input type="radio" name="cup-select" value="left">
+        </p>
+        <p>Middle
+          <input type="radio" name="cup-select" value="middle">
+        </p>
+        <p>Right
+          <input type="radio" name="cup-select" value="right">
+        </p>
+        <button id="submit-choice" class="btn">Submit</button>
+      </div>
+      <div class="container ball-selector hide">
+        <h1>Where is the ball?</h1>
+        <p>Left
+          <input type="radio" name="cup-winner" value="left">
+        </p>
+        <p>Middle
+          <input type="radio" name="cup-winner" value="middle">
+        </p>
+        <p>Right
+          <input type="radio" name="cup-winner" value="right">
+        </p>
+        <button id="submit-guess" class="btn">Submit</button>
+      </div>
+      <div class="container game-restart hide">
+        <h1>Play Again?</h1>
+        <button id="restart-game" class="btn">Yes</button>
+        <button id="quit-game" class="btn">No</button>
+        <button id="reset-game" class="btn">Reset</button>
+
+      </div>
+    </section>
+    <section class="cups-container hide">
+      <div id="cup1" class="cup-parent left">
+          <img class="cup" src="img/cup.png">
+      </div>
+      <div id="cup2" class="cup-parent middle">
+          <img class="cup" src="img/cup.png">
+      </div>
+      <div id="cup3" class="cup-parent right">
+          <img class="cup" src="img/cup.png">
+      </div>
+    </section>
+    <section class="status-container">
+      <h2 class="status">Dealer: <span id="status"></span></h2>
+     </section>
+    <section class="stats-container hide">
+      <h2 class="bet">Bet: <span id="current-bet"></span></h2>
+      <div class="column">
+        <p id="player" class="player"></p>
+        <p id="player-wallet" class="player-wallet"></p>
+      </div>
+      <div class="column">
+        <p id="dealer" class="dealer">Dealer</p>
+        <p id="dealer-wallet" class="dealer-wallet"></p>
+      </div>
+    </section>
+  </main>
+</body>
+<script src="index.js"></script>
+
+</html>

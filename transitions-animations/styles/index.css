@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently */ }
+
+body {
+  font-family: 'Lato', sans-serif; }
+
+/* generic styling */
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.flex-center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; }
+
+.main-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  height: 100vh; }
+
+.controls {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0); }
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 1.5s cubic-bezier(0.6, 1.13, 0.83, 0.95) 0s; }
+
+.slide1 {
+  background: #A0CAB5; }
+
+.slide2 {
+  background: #CDE9CA; }
+
+.slide3 {
+  background: #55443D; }
+
+.slide4 {
+  background: #F1EDD0; }
+
+.slide5 {
+  background: #F38A8A; }
+
+.activator {
+  width: 20px;
+  height: 20px; }
+
+.active {
+  transform: translateX(0%); }
+
+.carousel > .slide:not(.active) {
+  transform: translateX(-100%); }
+
+.carousel > .active ~ .slide:not(.active) {
+  transform: translateX(100%); }
+
+/*# sourceMappingURL=index.css.map */

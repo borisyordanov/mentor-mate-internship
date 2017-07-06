@@ -1,0 +1,209 @@
+body {
+	background: #4d4d56;
+	font-family: Arial, Helvetica, sans-serif;
+	cursor: default;
+	user-select: none;
+	margin: 0;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	/* for vertical scrollbars */
+	height: 10px;
+	/* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+	background: #4d4d56;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+	color: white;
+	text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+	text-align: center;
+	margin: 12px 0;
+}
+
+img {
+	width: 72px;
+	height: 72px;
+	margin-top: 15px;
+	border: 2px solid white;
+	border-radius: 50%;
+}
+
+.name,
+.gender {
+	text-transform: capitalize;
+}
+
+/* remove fixed dimensions */
+
+.words {
+	background: gray;
+	border-radius: 8px;
+	font-size: 20px;
+	padding: 4px;
+	text-align: center;
+	text-shadow: none;
+}
+
+.wrapper {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.heading {
+	display: inline-flex;
+	margin: 10px;
+}
+
+.user-list {
+	border-top: 5px solid goldenrod;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	justify-content: center;
+	max-width: 1050px;
+}
+
+.user {
+	align-items: center;
+	color: white;
+	display: flex;
+	flex: 0 1 350px;
+	flex-direction: column;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+	white-space: nowrap;
+}
+
+.value-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 15px;
+}
+
+
+
+/* loader animation */
+
+.cssload-container {
+	height: 49px;
+	text-align: center;
+	width: 0;
+}
+
+.cssload-speeding-wheel {
+	animation: cssload-spin 575ms infinite linear;
+	-o-animation: cssload-spin 575ms infinite linear;
+	-ms-animation: cssload-spin 575ms infinite linear;
+	-webkit-animation: cssload-spin 575ms infinite linear;
+	-moz-animation: cssload-spin 575ms infinite linear;
+	border: 3px solid white;
+	border-radius: 50%;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	margin-top: 15px;
+	margin-left: 15px;
+	height: 30px;
+	width: 30px;
+}
+
+@keyframes cssload-spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes cssload-spin {
+	100% {
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes cssload-spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes cssload-spin {
+	100% {
+		-moz-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+/* arrows */
+
+i {
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 6px;
+	opacity: 0;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+}
+
+.up {
+	transform: rotate(-135deg);
+}
+
+.down {
+	transform: rotate(45deg);
+}
+
+.value-container:hover i {
+	opacity: 1;
+}
+
+p.test {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	bottom: 10px;
+	left: 12px;
+	display: inline-flex;
+	width: 100px;
+	height: 20px;
+	margin: 5px;
+	padding: 5px;
+	background-color: red;
+	color: white;
+	border: 1px solid;
+	font-size: 120px;
+	font-weight: 600;
+}
+
+
+/* Responsiveness */
+@media screen and (max-width: 1250px) {
+	.user {
+		flex: 1 1 50%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.user {
+		flex: 1 1 100%;
+	}
+	.cssload-container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -24px;
+		margin-left: -24px;
+	}
+}

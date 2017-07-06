@@ -1,0 +1,92 @@
+/* RESETS */
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    user-select: none;
+    text-decoration: none;
+    outline: none;
+}
+
+/* GENERAL */
+
+html {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+}
+
+.input {
+    font-size: 18px;
+    margin-top: 8px;
+    color: #6B6C6E;
+    height: 30px;
+    border: 1px solid #D8D8D8;
+    padding: 0 10px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fields {
+    display: flex;
+    justify-content: space-around;
+}
+
+.field {
+    max-width: 420px;
+    margin: 50px 20px 0 20px;
+    float: left;
+}
+
+.row {
+    display: inline-flex;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    margin: 0 1px;
+    border: 1px solid grey;
+}
+
+.cell-blue {
+    border: 2px solid blue;
+}
+
+.cell-green {
+    border: 2px solid green;
+}
+
+.cell-red {
+    border: 3px solid red;
+}
+
+.btn {
+    background: #3498db;
+    border-radius: 6px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 6px 10px;
+    text-decoration: none;
+}

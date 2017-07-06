@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Store</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+  <div class="flip-container">
+    <img class="cart" src="img/cart.png">
+    <div id="flipper" class="flipper">
+      <div class="front">
+        <div class="form-container">
+          <div class="header">
+            <h1 class="capitalize">Car Store </h1>
+            <img src="img/car-search.png">
+          </div>
+          <div class="input-container">
+            <label class="capitalize">Name</label>
+            <input id="name" class="input" type="text">
+          </div>
+          <div class="input-container">
+            <label class="capitalize">Type</label>
+            <select id="type" class="input">
+              <!-- dropdown options inserted with js -->
+            </select>
+          </div>
+          <div class="input-container">
+            <label class="capitalize">Color</label>
+            <select id="color" class="input">
+              <!-- dropdown options inserted with js -->
+            </select>
+          </div>
+          <div class="input-container">
+            <label class="capitalize">Price ($)</label>
+            <input id="price" class="input" type="number" step="1000" value="1000">
+          </div>
+          <a href="#" id="submit" class="action-button shadow animate blue capitalize">Search</a>
+          <div id="results-container" class="results-container hide">
+            <!-- results are inserted with js -->
+          </div>
+          <a href="#" id="buy" class="action-button shadow animate blue capitalize hide">Buy</a>
+        </div>
+      </div>
+      <div class="back">
+        <div class="form-container">
+          <div class="header">
+            <h1 class="capitalize">Cars Bought </h1>
+            <img class="" src="img/car-sell.png">
+          </div>
+          <div id="purchases-container" class="results-container">
+            <!-- results are inserted with js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer src="js/index.js"></script>
+</body>

@@ -1,0 +1,123 @@
+/* RESETS */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  user-select: none;
+  text-decoration: none;
+  outline: none;
+}
+
+
+/* GENERAL */
+
+html {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 10px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.main-container {
+  max-width: 302px;
+  width: 100%;
+  margin: 100px auto 0 auto;
+  text-align: center;
+  background: white;
+  border: 1px solid;
+}
+
+
+/* HEADER */
+
+.header {
+  position: relative;
+}
+
+.menu {
+  float: left;
+  padding: 8px 0 0 10px;
+}
+
+.title {
+  padding: 8px 0 0 45px;
+  font-size: 16px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+/* DISPLAYS */
+
+.display {
+  padding: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.input {
+  height: 40px;
+  line-height: 34px;
+  background: DarkGrey;
+  font-size: 24px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.result {
+  height: 30px;
+  line-height: 24px;
+  background: LightSteelBlue;
+  font-size: 24px;
+  border: 1px solid black;
+}
+
+
+/* CONTROL */
+
+.row {
+  display: inline-flex;
+}
+
+.btn {
+  width: 75px;
+  height: 50px;
+  background: #E3E3E3;
+  font-size: 20px;
+  color: black;
+}
+
+.btn:hover {
+  background: #DADADA;
+}
+
+.btn-width-2x {
+  width: 150px;
+}
+
+.active-btn {
+  background: #DADADA;
+}
+
+.memory-btn {
+  height: 36px;
+  width: 60px;
+  background: white;
+  font-size: 14px;
+  border-top: 1px #e6e6e6 solid;
+}
+
+.disabled-btn {
+  color: #e6e6e6;
+}
+
+.disabled-btn:hover {
+  background: white;
+}

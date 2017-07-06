@@ -1,0 +1,238 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently */ }
+
+.round {
+  border-radius: 50%; }
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.position-absolute {
+  position: absolute; }
+
+.background {
+  z-index: 0; }
+
+.bottom {
+  z-index: 1; }
+
+.middle {
+  z-index: 2; }
+
+.top {
+  z-index: 3; }
+
+:root {
+  --earth-orbit: 800px;
+  --earth-speed: 365s;
+  --earth-size: 50px;
+  --moon-orbit: 60px;
+  --moon-speed: 27s;
+  --moon-size: 20px;
+  --mercury-orbit: 450px;
+  --mercury-speed: 88s;
+  --mercury-size: 30px;
+  --venus-orbit: 580px;
+  --venus-speed: 225s;
+  --venus-size: 40px; }
+
+body {
+  font-family: 'Lato', sans-serif; }
+
+.model {
+  position: relative;
+  width: 100vw;
+  height: 100vh; }
+
+/* Sun */
+.sun {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  padding: 75px;
+  box-shadow: 0 0 30px 15px #fbe602, 0 0 50px 30px #e70f14, 0 0 70px 45px #fabc14; }
+
+.sun:hover + .comet {
+  animation: cometMove 4s;
+  animation-timing-function: steps(500, start); }
+
+/* comet */
+.comet {
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 40px solid #CCF5FE;
+  opacity: 0; }
+
+.comet:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 40px solid #CCF5FE;
+  margin: 15px 0 0 -25px; }
+
+/* Mercury */
+.mercury-orbit {
+  top: calc(50% - (var(--mercury-orbit)/2));
+  left: calc(50% - (var(--mercury-orbit)/2));
+  border: solid 2px #f00;
+  width: var(--mercury-orbit);
+  height: var(--mercury-orbit);
+  animation: rotatePlanet var(--mercury-speed) linear infinite; }
+
+.mercury-orbit:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin: calc((var(--mercury-size)/2)*(-1));
+  background: red;
+  width: var(--mercury-size);
+  height: var(--mercury-size);
+  border-radius: 50%; }
+
+/* Venus */
+.venus-orbit {
+  top: calc(50% - (var(--venus-orbit)/2));
+  left: calc(50% - (var(--venus-orbit)/2));
+  border: solid 2px orange;
+  width: var(--venus-orbit);
+  height: var(--venus-orbit);
+  animation: rotatePlanet var(--venus-speed) linear infinite; }
+
+.venus-orbit:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin: calc((var(--venus-size)/2)*(-1));
+  background: orange;
+  width: var(--venus-size);
+  height: var(--venus-size);
+  border-radius: 50%; }
+
+/* Earth */
+.earth-orbit {
+  border: solid 2px blue;
+  width: var(--earth-orbit);
+  height: var(--earth-orbit); }
+
+@keyframes spin-earth {
+  from {
+    transform: rotate(0deg) translate3d(calc(var(--earth-orbit)/2), 0, 0) rotate(0deg); }
+  to {
+    transform: rotate(360deg) translate3d(calc(var(--earth-orbit)/2), 0, 0) rotate(-360deg); } }
+.earth {
+  position: relative;
+  margin: calc((var(--earth-size)/2)*(-1));
+  background: blue;
+  width: var(--earth-size);
+  height: var(--earth-size);
+  animation: spin-earth var(--earth-speed) linear 0s infinite; }
+
+@keyframes spin-moon {
+  from {
+    transform: rotate(0deg) translate3d(var(--moon-orbit), 0, 0) rotate(0deg); }
+  to {
+    transform: rotate(360deg) translate3d(var(--moon-orbit), 0, 0) rotate(-360deg); } }
+.moon {
+  background: gray;
+  margin: calc((var(--moon-size)/2)*(-1));
+  width: var(--moon-size);
+  height: var(--moon-size);
+  animation: spin-moon var(--moon-speed) linear 0s infinite; }
+
+/* rotation animation */
+@keyframes rotatePlanet {
+  0% {
+    transform: rotate(0deg);
+    transition: transform 1s linear; }
+  100% {
+    transform: rotate(360deg);
+    transition: transform 1s linear; } }
+/* comet animation */
+@keyframes cometMove {
+  0% {
+    opacity: 0;
+    transition: transform 2s linear 1s, opacity 1s;
+    transform: translate3d(0, 0, 0); }
+  48% {
+    transform: translate3d(40vw, 56vh, 0); }
+  49% {
+    transform: translate3d(41vw, 57vh, 0); }
+  50% {
+    transform: translate3d(42vw, 58vh, 0);
+    opacity: 1; }
+  51% {
+    transform: translate3d(43vw, 59vh, 0); }
+  52% {
+    transform: translate3d(44vw, 60vh, 0); }
+  100% {
+    transition: transform 2s linear 0, opacity 1s;
+    transform: translate3d(95vw, 70vh, 0);
+    opacity: 0; } }
+/* background */
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+@-webkit-keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+@-moz-keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+@-ms-keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+.stars,
+.twinkling {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+.stars {
+  background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center; }
+
+.twinkling {
+  background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  -moz-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -webkit-animation: move-twink-back 200s linear infinite;
+  animation: move-twink-back 200s linear infinite; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?kon91j');
+  src:  url('fonts/icomoon.eot?kon91j#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?kon91j') format('truetype'),
+    url('fonts/icomoon.woff?kon91j') format('woff'),
+    url('fonts/icomoon.svg?kon91j#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fork:before {
+  content: "\e900";
+}
+.icon-eye:before {
+  content: "\e9ce";
+}
+.icon-star:before {
+  content: "\e9d9";
+}
+.icon-notification:before {
+  content: "\ea08";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-arrow:before {
+  content: "\ea3a";
+}

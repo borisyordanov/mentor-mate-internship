@@ -1,0 +1,90 @@
+@import 'reset';
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+
+/* generic styling */
+
+.controls > a {
+  display: inline-block;
+  height: 23px;
+  width: 30px;
+  background: gray;
+  border-radius: 10%;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+.carousel > .slide1 {
+  background: #A0CAB5;
+}
+
+.carousel > .slide2 {
+  background: #CDE9CA;
+}
+
+.carousel > .slide3 {
+  background: #55443D;
+}
+
+.carousel > .slide4 {
+  background: #F1EDD0;
+}
+
+.carousel > .slide5 {
+  background: #F38A8A;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 1s cubic-bezier(0.6, 1.13, 0.83, 0.95) 0s;
+}
+
+.flex-center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+.controls {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0)
+}
+
+.carousel > .slide {
+  transform: translateX(-100%);
+  visibility: hidden;
+}
+
+.carousel > .slide:target {
+  transform: translateX(0%);
+  visibility: visible;
+}
+
+.carousel > .slide:target ~ .slide {
+  transform: translateX(100%);
+  visibility: hidden;
+}

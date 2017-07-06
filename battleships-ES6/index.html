@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Battle Ships</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+    <header>
+        <h1>Battle Ships</h1>
+        <button id="start" class="btn">Start</button>
+    </header>
+    <main>
+        <section class="user-info">
+            <div id="player1" class="player1">
+                <div class="player-info">
+                    <h2>Player1</h2>
+                    <div class="input-container">
+                        <label>Name:</label>
+                        <input id="name" class="input" type="text" name="name" value="Player1Name">
+                        <select id="gender" class="input" name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label>Birth year:</label>
+                        <input id="year" class="input" type="text" name="birth-year" value="1990">
+                        <select id="type" class="input" name="type">
+                            <option value="Student">Student</option>
+                            <option value="Worker">Worker</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label>Location:</label>
+                        <input id="location" class="input" type="text" name="location" value="Sofia">
+                        <select id="color" class="input" name="color">
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ship-info">
+                    <h3>Add Ship</h3>
+                    <select id="ship-type" class="input" name="ship-type">
+                        <option value="Carrier">Carrier</option>
+                        <option value="Battleship">Battleship</option>
+                        <option value="Cruiser">Cruiser</option>
+                        <option value="Submarine">Submarine</option>
+                        <option value="Destroyer">Destroyer</option>
+                    </select>
+                    <input id="ship-location" class="input" type="number" name="ship-location" min="11" max="110" placeholder="Position">
+                    <select id="ship-orientation" class="input" name="ship-orientation">
+                        <option value="vertical">Vertical</option>
+                        <option value="horizontal">Horizontal</option>
+                    </select>
+                    <button id="add-ship" class="btn">Add Ship</button>
+                </div>
+            </div>
+            <div id="player2" class="player2">
+                <div class="player-info">
+                    <h2>Player2</h2>
+                    <div class="input-container">
+                        <label>Name:</label>
+                        <input id="name" class="input" type="text" name="name" value="Player2Name">
+                        <select id="gender" class="input" name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label>Birth year:</label>
+                        <input id="year" class="input" type="text" name="birth-year" value="1991">
+                        <select id="type" class="input" name="type">
+                            <option value="Student">Student</option>
+                            <option value="Worker">Worker</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label>Location:</label>
+                        <input id="location" class="input" type="text" name="location" value="Druzhba">
+                        <select id="color" class="input" name="color">
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ship-info">
+                    <h3>Add Ship</h3>
+                    <select id="ship-type" class="input" name="ship-type">
+                        <option value="Carrier">Carrier</option>
+                        <option value="Battleship">Battleship</option>
+                        <option value="Cruiser">Cruiser</option>
+                        <option value="Submarine">Submarine</option>
+                        <option value="Destroyer">Destroyer</option>
+                    </select>
+                    <input id="ship-location" class="input" type="number" name="ship-location" min="11" max="110" placeholder="Position">
+                    <select id="ship-orientation" class="input" name="ship-orientation">
+                        <option value="vertical">Vertical</option>
+                        <option value="horizontal">Horizontal</option>
+                    </select>
+                    <button id="add-ship" class="btn">Add Ship</button>
+                </div>
+            </div>
+        </section>
+        <section class="fields">
+            <!-- content is generated with js -->
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="js/helpers.js"></script>
+    <script src="js/PlayerFactory.js"></script>
+    <script src="js/ShipFactory.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/ships/Ship.js"></script>
+    <script src="js/ships/Battleship.js"></script>
+    <script src="js/ships/Carrier.js"></script>
+    <script src="js/ships/Cruiser.js"></script>
+    <script src="js/ships/Destroyer.js"></script>
+    <script src="js/ships/Submarine.js"></script>
+    <script src="js/GameField.js"></script>
+    <script src="js/people/Person.js"></script>
+    <script src="js/people/Worker.js"></script>
+    <script src="js/people/Student.js"></script>
+    <script src="js/people/Player.js"></script>
+    <script src="js/people/PlayerStudent.js"></script>
+    <script src="js/people/PlayerWorker.js"></script>
+    <script src="js/main.js"></script>
+</body>

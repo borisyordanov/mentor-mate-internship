@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Orbitron" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <main class="main-container">
+    <div class="header">
+      <div id="menu" class="menu">☰</div>
+      <div id="title" class="title bold-text"></div>
+    </div>
+    <div class="display">
+      <div id="input" class="input"></div>
+    </div>
+    <div class="controls">
+      <div id="advanced" class="advanced hide">
+        <div class="row">
+          <button class="btn memory-btn disabled-btn" id="memory-clear" value="MC">MC</button>
+          <button class="btn memory-btn disabled-btn" id="memory-recall" value="MR">MR</button>
+          <button class="btn memory-btn" id="memory-addition" value="M+">M+</button>
+          <button class="btn memory-btn" id="memory-subtraction" value="M-">M-</button>
+          <button class="btn memory-btn" id="memory-save" value="MS">MS</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-width-2x" id="clear" value="C">C</button>
+          <button class="btn btn-width-2x" id="clear-entry" value="CE">CE</button>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn" id="percent" value="%">%</button>
+        <button class="btn" id="sqrt" value="√">√</button>
+        <button class="btn" id="delete" value="Delete">⌫</button>
+        <button class="btn  operator-btn" value="/">/</button>
+      </div>
+      <div class="row">
+        <button class="btn numeric-btn bold-text" value="7">7</button>
+        <button class="btn numeric-btn bold-text" value="8">8</button>
+        <button class="btn numeric-btn bold-text" value="9">9</button>
+        <button class="btn  operator-btn" value="*">*</button>
+      </div>
+      <div class="row">
+        <button class="btn numeric-btn bold-text" value="4">4</button>
+        <button class="btn numeric-btn bold-text" value="5">5</button>
+        <button class="btn numeric-btn bold-text" value="6">6</button>
+        <button class="btn operator-btn" value="-">-</button>
+      </div>
+      <div class="row">
+        <button class="btn numeric-btn bold-text" value="1">1</button>
+        <button class="btn numeric-btn bold-text" value="2">2</button>
+        <button class="btn numeric-btn bold-text" value="3">3</button>
+        <button class="btn  operator-btn" value="+">+</button>
+      </div>
+      <div class="row">
+        <button class="btn" id="plus-minus" value="±">±</button>
+        <button class="btn numeric-btn bold-text" value="0">0</button>
+        <button class="btn numeric-btn" value=".">.</button>
+        <button class="btn" id="return" value="Enter">=</button>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="main.js"></script>
+<script src="helpers.js"></script>
+<script src="utils.js"></script>
+
+</html>
